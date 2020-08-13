@@ -1,3 +1,5 @@
+# https://practice.geeksforgeeks.org/problems/largest-square-formed-in-a-matrix/0
+
 t = int(input())
 
 def max_square(arr:[[]],n:int,m:int)->int:
@@ -8,12 +10,12 @@ def max_square(arr:[[]],n:int,m:int)->int:
 
     for i in range(1,n+1):
         for j in range(1,m+1):
-            if arr[i-1][j-1]!=0:
+            if arr[i-1][j-1]==1:
                 dp[i][j] = min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1])+arr[i-1][j-1]
                 max_area = max(max_area,dp[i][j])
             else:
-                dp[i][j] = 0
-    print(dp)
+                dp[i][j] = 0 # square to bna hi nhi.. 0 aa gya
+    #print(dp)
     
     return max_area
     

@@ -1,3 +1,6 @@
+# https://practice.geeksforgeeks.org/problems/count-all-possible-paths-from-top-left-to-bottom-right/0
+
+MOD = 10**9+7
 t = int(input())
 
 def no_of_paths(m,n):
@@ -14,11 +17,11 @@ def no_of_paths(m,n):
     
     for i in range(2,m+1):
         for j in range(2,n+1):
-            dp[i][j] = dp[i-1][j] + dp[i][j-1]
-            print(dp)
+            dp[i][j] = (dp[i-1][j] + dp[i][j-1])%MOD
+            #print(dp)
 
-    print(dp)
-    return dp[m][n]
+    #print(dp)
+    return dp[m][n]%MOD
 
 
 
