@@ -1,3 +1,5 @@
+# https://practice.geeksforgeeks.org/problems/number-of-coins/0
+# TLE, work in Java
 import sys
 t = int(input())
 

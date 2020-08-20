@@ -1,31 +1,31 @@
-# https://practice.geeksforgeeks.org/problems/get-minimum-squares/0
-import math
-t = int(input())
-
-def min_squares(n):
-
-    dp = [0]*(n+1)
-    dp[1] = 1
-
-    for i in range(2,n+1):
-        if math.ceil(math.sqrt(i))*math.ceil(math.sqrt(i)) == i:
-            dp[i] = 1
-        else:
-            dp[i] = i
-            for j in range(1,math.ceil(i)+1):
-                if j*j>i:
-                    break
-                else:
-                    dp[i] = min(dp[i],dp[i-(j*j)]+1)
-
-    return dp[n]
-
-
-
-while t!=0:
-    t-=1
-
-    n = int(input())
-    
-    ans = min_squares(n)
-    print(ans)
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Get_Minimum_Squares
+ {
+	public static void main (String[] args)
+	 {
+	 //code
+	 Scanner s = new Scanner(System.in);
+	 int t = s.nextInt();
+	 
+	 while(t--!=0){
+	     int n = s.nextInt();
+	     int res = solve(n);
+	     System.out.println(res);
+	 }
+	 }
+	 
+	 static int solve(int n){
+	     int[] dp = new int[n+1];
+	     dp[1] = 1;
+	     
+	     for(int i=2;i<=n;i++){
+	         dp[i] = i;
+	         for(int j=1;j*j<=i;j++){
+	             dp[i] = Math.min(dp[i],dp[i-(j*j)]+1);
+	         }
+	     }
+	    return dp[n];
+	 }
+}
