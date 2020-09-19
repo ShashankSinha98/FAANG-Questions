@@ -18,8 +18,8 @@ def days(arr:[],n:int):
             
             if i+1==n:
                 maxima.append(i)
-    #print(minima)
-    #print(maxima)
+    print(minima)
+    print(maxima)
     if len(minima)==0:
         return "No Profit"
     else:

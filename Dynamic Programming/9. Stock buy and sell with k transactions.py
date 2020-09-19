@@ -25,7 +25,7 @@ def max_profit_optimized(prices,n,k):
     for i in range(1,k+1):
         maxdiff = -sys.maxsize
         for j in range(1,n+1):
-            maxdiff = max(maxdiff,dp[i-1][j-1]-prices[j-1])
+            maxdiff = max(maxdiff,dp[i-1][j]-prices[j-1])
             dp[i][j] = max(maxdiff+prices[j-1],dp[i][j-1])
     
     return dp[k][n]
