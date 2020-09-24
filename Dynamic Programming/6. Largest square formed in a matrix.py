@@ -20,7 +20,6 @@ def max_square(arr:[[]],n:int,m:int)->int:
     return max_area
     
 
-
 while t!=0:
     t-=1
     n,m = [int(i) for i in input().split()]
